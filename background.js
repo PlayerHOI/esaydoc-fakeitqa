@@ -147,7 +147,7 @@ chrome.contextMenus.create(
 chrome.contextMenus.create(
     {
         id: "insertGeneratedEmail",
-        title: "Insert Fake Email",
+        title: "Fake Email",
         contexts: ['editable']
     }
 )
@@ -155,7 +155,7 @@ chrome.contextMenus.create(
 chrome.contextMenus.create(
     {
         id: "insertGeneratedID",
-        title: "Insert Fake ISR ID",
+        title: "Fake ISR ID",
         contexts: ['editable']
     }
 )
