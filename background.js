@@ -141,7 +141,7 @@ browser extension. */
 chrome.contextMenus.create(
     {
         id: "insertGeneratedPhone",
-        title: "Fake ISR Mobile Number",
+        title: "Random ISR Mobile Number",
         contexts: ['editable']
     }
 )
@@ -149,7 +149,7 @@ chrome.contextMenus.create(
 chrome.contextMenus.create(
     {
         id: "insertGeneratedEmail",
-        title: "Fake Email",
+        title: "Random Email",
         contexts: ['editable']
     }
 )
@@ -157,7 +157,7 @@ chrome.contextMenus.create(
 chrome.contextMenus.create(
     {
         id: "insertGeneratedID",
-        title: "Fake ISR ID",
+        title: "Random ISR ID",
         contexts: ['editable']
     }
 )
