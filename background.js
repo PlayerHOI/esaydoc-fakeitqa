@@ -19,7 +19,7 @@ function contentInject(text) {
 }
 
 /**
- * The function generates a random ID number with a check digit.
+ * The function generates a random Israeli ID number with a check digit.
  * @returns a randomly generated ID number.
  */
 function generateID() {
@@ -42,8 +42,9 @@ function generateID() {
 }
 
 /**
- * The function generates a random phone number with a prefix from a given set of options and a random
- * set of digits.
+ * The function generates a random phone israeli mobile number with a 050 prefix and a random
+ * set of digits. The number follows a patter to avoid using real numbers that may trigger notifications
+ * from Easydoc
  * @returns a randomly generated phone number.
  */
 function generatePhone() {
@@ -63,8 +64,8 @@ function generatePhone() {
 
 /**
  * The `generateEmail` function generates a random email address using a combination of random first
- * and last names from different nationalities and a random domain from a predefined list.
- * @returns a randomly generated email address in the format of "firstname.lastname@domain".
+ * and last names from different nationalities followed by a random number.
+ * @returns a randomly generated email address in the format of "randFirst.randLast+randNumber@test.com".
  */
 function generateEmail() {
     //const domains = ['test', 'ipsum'];
@@ -86,7 +87,7 @@ function generateEmail() {
     const randDomain = 'test.com'
 
     //return `${randFirst}.${randLast}@${randDomain}.${randNation}`;
-	return `${randFirst}.${randLast}${randNumber}@${randDomain}`;
+    return `${randFirst}.${randLast}${randNumber}@${randDomain}`;
 }
 
 /**
