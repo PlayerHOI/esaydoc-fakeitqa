@@ -1,0 +1,36 @@
+{
+    "name": "Fake IT QA Edition",
+    "version": "1.6.0",
+    "description": "Created by Barbra (Not Streisand)\nModified for QA by Edgar (Spongebob).\nAll Right Reserved.",
+    "manifest_version": 3,
+    "action": {},
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "scripting",
+        "contextMenus",
+        "clipboardWrite",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "/images/icon_16.png",
+        "32": "/images/icon_32.png",
+        "48": "/images/icon_48.png",
+        "128": "/images/icon_128.png"
+    }
+}
