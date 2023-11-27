@@ -81,11 +81,12 @@ function generateEmail() {
     const randNation = nationalities[Math.floor(Math.random() * nationalities.length)].toLowerCase();
     const randFirst = allNames[randNation].first[Math.floor(Math.random() *  allNames[randNation].first.length)].toLowerCase();
     const randLast =  allNames[randNation].last[Math.floor(Math.random() *  allNames[randNation].last.length)].toLowerCase();
-	//const randDomain = domains[Math.floor(Math.random() * domains.length)];
+	const randNumber = Math.floor(Math.random() * (999 - 100 + 1)) + 100
+    //const randDomain = domains[Math.floor(Math.random() * domains.length)];
     const randDomain = 'test.com'
 
     //return `${randFirst}.${randLast}@${randDomain}.${randNation}`;
-	return `${randFirst}.${randLast}@${randDomain}`;
+	return `${randFirst}.${randLast}${randNumber}@${randDomain}`;
 }
 
 /**
