@@ -90,6 +90,11 @@ function generateEmail() {
     return `${randFirst}.${randLast}${randNumber}@${randDomain}`;
 }
 
+// Testing Stuff
+function testMethod() {
+    console.clear
+}
+
 /**
  * The `handleMenuItem` function is used to handle different menu item selections and execute
  * corresponding functions in a Chrome browser extension.
@@ -115,6 +120,9 @@ function handleMenuItem(e, tab) {
         case 'insertGeneratedID':
             fakeValue = generateID()
             break;
+        case 'testMethod':
+            fakeValue = testMethod()
+            break;            
         default:
             break;
     }
@@ -158,6 +166,14 @@ chrome.contextMenus.create(
     {
         id: "insertGeneratedID",
         title: "Random ISR ID",
+        contexts: ['editable']
+    }
+)
+
+chrome.contextMenus.create(
+    {
+        id: "testMethod",
+        title: "Testing",
         contexts: ['editable']
     }
 )
