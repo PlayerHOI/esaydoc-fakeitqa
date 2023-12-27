@@ -32,13 +32,14 @@ function generateISRID() {
         return (inc > 9) ? inc -= 9 : inc;
     }
 
-    var iid = "", num, counter = 0;
+    var isrid = "", num, counter = 0;
     for (var i = 0; i < 8; i++) {
         num = getRandomInt((i < 2) ? 2 : 0, (i < 2) ? 3 : 9);
-        iid += num.toString();
+        isrid += num.toString();
         counter += getInc(num, i);
     }
-    return iid + (10 - (counter % 10)).toString();
+    console.info("Generated Israeli ID: " + isrid + (10 - (counter % 10)).toString())
+    return isrid + (10 - (counter % 10)).toString();
 }
 
 /**
@@ -57,6 +58,7 @@ function generateISRPhone() {
 	//Creates a fake Israeli mobile phone number that cannot be used
 	const prefix = '050';
     const digits = Math.floor(Math.random() * (999 - 100 + 1)) + 100
+    console.info("Generated Phone: " + prefix.toString() + '0000' + digits.toString())
     return prefix.toString() + '0000' + digits.toString();
 }
 
@@ -87,7 +89,17 @@ function generateISREmail() {
     const randDomain = 'test.com'
 
     //return `${randFirst}.${randLast}@${randDomain}.${randNation}`;
+    console.info("Generated Email: " + `${randFirst}.${randLast}${randNumber}@${randDomain}`)
     return `${randFirst}.${randLast}${randNumber}@${randDomain}`;
+}
+
+function generateISRCompanyID() {
+	const prefix = '98';
+    const digits = Math.floor(Math.random() * (9999999 - 100000 + 1)) + 100
+    return prefix.toString() + digits.toString();
+}
+
+function testStuff() {
 }
 
 /**
@@ -114,6 +126,12 @@ function handleMenuItem(e, tab) {
             break;
         case 'insertGeneratedID':
             fakeValue = generateID()
+            break;
+        case 'insertGeneratedCompanyID':
+            fakeValue = generateISRCompanyID()
+            break;
+        case 'testMethod':
+            fakeValue = testStuff()
             break;
         default:
             break;
