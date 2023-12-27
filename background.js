@@ -22,7 +22,7 @@ function contentInject(text) {
  * The function generates a random Israeli ID number with a check digit.
  * @returns a randomly generated ID number.
  */
-function generateID() {
+function generateISRID() {
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -47,7 +47,7 @@ function generateID() {
  * from Easydoc
  * @returns a randomly generated phone number.
  */
-function generatePhone() {
+function generateISRPhone() {
 	
 	// Old Barbra Code
     //const prefixOptions = ['050', '051', '052', '053', '054', '055', '058', '059'];
@@ -67,7 +67,7 @@ function generatePhone() {
  * and last names from different nationalities followed by a random number.
  * @returns a randomly generated email address in the format of "randFirst.randLast+randNumber@test.com".
  */
-function generateEmail() {
+function generateISREmail() {
     //const domains = ['test', 'ipsum'];
     const nationalities = [ 'isr']
     const allNames = {
@@ -90,11 +90,6 @@ function generateEmail() {
     return `${randFirst}.${randLast}${randNumber}@${randDomain}`;
 }
 
-// Testing Stuff
-function testMethod() {
-    console.clear
-}
-
 /**
  * The `handleMenuItem` function is used to handle different menu item selections and execute
  * corresponding functions in a Chrome browser extension.
@@ -112,17 +107,14 @@ function handleMenuItem(e, tab) {
     clicked context menu item. */
     switch (e.menuItemId) {
         case 'insertGeneratedPhone':
-            fakeValue = generatePhone()
+            fakeValue = generateISRPhone()
             break;
         case 'insertGeneratedEmail':
-            fakeValue = generateEmail()
+            fakeValue = generateISREmail()
             break;
         case 'insertGeneratedID':
             fakeValue = generateID()
             break;
-        case 'testMethod':
-            fakeValue = testMethod()
-            break;            
         default:
             break;
     }
@@ -157,7 +149,7 @@ chrome.contextMenus.create(
 chrome.contextMenus.create(
     {
         id: "insertGeneratedEmail",
-        title: "Random Email",
+        title: "Random ISR Email",
         contexts: ['editable']
     }
 )
@@ -165,7 +157,15 @@ chrome.contextMenus.create(
 chrome.contextMenus.create(
     {
         id: "insertGeneratedID",
-        title: "Random ISR ID",
+        title: "Random ISR Person ID",
+        contexts: ['editable']
+    }
+)
+
+chrome.contextMenus.create(
+    {
+        id: "insertGeneratedCompanyID",
+        title: "Random ISR Company ID",
         contexts: ['editable']
     }
 )
